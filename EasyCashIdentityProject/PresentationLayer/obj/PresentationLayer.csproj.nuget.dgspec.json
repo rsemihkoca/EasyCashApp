@@ -4,6 +4,246 @@
     "/home/rsemihkoca/Projects/EasyCashApp/EasyCashIdentityProject/PresentationLayer/PresentationLayer.csproj": {}
   },
   "projects": {
+    "/home/rsemihkoca/Projects/EasyCashApp/EasyCashIdentityProject/BusinessLayer/BusinessLayer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/rsemihkoca/Projects/EasyCashApp/EasyCashIdentityProject/BusinessLayer/BusinessLayer.csproj",
+        "projectName": "BusinessLayer",
+        "projectPath": "/home/rsemihkoca/Projects/EasyCashApp/EasyCashIdentityProject/BusinessLayer/BusinessLayer.csproj",
+        "packagesPath": "/home/rsemihkoca/.nuget/packages/",
+        "outputPath": "/home/rsemihkoca/Projects/EasyCashApp/EasyCashIdentityProject/BusinessLayer/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/rsemihkoca/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/rsemihkoca/Projects/EasyCashApp/EasyCashIdentityProject/DataAccessLayer/DataAccessLayer.csproj": {
+                "projectPath": "/home/rsemihkoca/Projects/EasyCashApp/EasyCashIdentityProject/DataAccessLayer/DataAccessLayer.csproj"
+              },
+              "/home/rsemihkoca/Projects/EasyCashApp/EasyCashIdentityProject/EntityLayer/EntityLayer.csproj": {
+                "projectPath": "/home/rsemihkoca/Projects/EasyCashApp/EasyCashIdentityProject/EntityLayer/EntityLayer.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/rsemihkoca/Projects/EasyCashApp/EasyCashIdentityProject/DataAccessLayer/DataAccessLayer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/rsemihkoca/Projects/EasyCashApp/EasyCashIdentityProject/DataAccessLayer/DataAccessLayer.csproj",
+        "projectName": "DataAccessLayer",
+        "projectPath": "/home/rsemihkoca/Projects/EasyCashApp/EasyCashIdentityProject/DataAccessLayer/DataAccessLayer.csproj",
+        "packagesPath": "/home/rsemihkoca/.nuget/packages/",
+        "outputPath": "/home/rsemihkoca/Projects/EasyCashApp/EasyCashIdentityProject/DataAccessLayer/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/rsemihkoca/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/rsemihkoca/Projects/EasyCashApp/EasyCashIdentityProject/EntityLayer/EntityLayer.csproj": {
+                "projectPath": "/home/rsemihkoca/Projects/EasyCashApp/EasyCashIdentityProject/EntityLayer/EntityLayer.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/rsemihkoca/Projects/EasyCashApp/EasyCashIdentityProject/EntityLayer/EntityLayer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/rsemihkoca/Projects/EasyCashApp/EasyCashIdentityProject/EntityLayer/EntityLayer.csproj",
+        "projectName": "EntityLayer",
+        "projectPath": "/home/rsemihkoca/Projects/EasyCashApp/EasyCashIdentityProject/EntityLayer/EntityLayer.csproj",
+        "packagesPath": "/home/rsemihkoca/.nuget/packages/",
+        "outputPath": "/home/rsemihkoca/Projects/EasyCashApp/EasyCashIdentityProject/EntityLayer/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/rsemihkoca/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "/home/rsemihkoca/Projects/EasyCashApp/EasyCashIdentityProject/PresentationLayer/PresentationLayer.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -25,7 +265,17 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "/home/rsemihkoca/Projects/EasyCashApp/EasyCashIdentityProject/BusinessLayer/BusinessLayer.csproj": {
+                "projectPath": "/home/rsemihkoca/Projects/EasyCashApp/EasyCashIdentityProject/BusinessLayer/BusinessLayer.csproj"
+              },
+              "/home/rsemihkoca/Projects/EasyCashApp/EasyCashIdentityProject/DataAccessLayer/DataAccessLayer.csproj": {
+                "projectPath": "/home/rsemihkoca/Projects/EasyCashApp/EasyCashIdentityProject/DataAccessLayer/DataAccessLayer.csproj"
+              },
+              "/home/rsemihkoca/Projects/EasyCashApp/EasyCashIdentityProject/EntityLayer/EntityLayer.csproj": {
+                "projectPath": "/home/rsemihkoca/Projects/EasyCashApp/EasyCashIdentityProject/EntityLayer/EntityLayer.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
