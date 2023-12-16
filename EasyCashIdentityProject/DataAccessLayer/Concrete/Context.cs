@@ -14,7 +14,7 @@ namespace DataAccessLayer.Concrete
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server=localhost,1433; initial catalog=EasyCashDb; integrated Security=true");
+            optionsBuilder.UseSqlServer("Server=localhost,1433; Initial Catalog=EasyCashDb; integrated Security=false; User ID='sa'; Password=Password123!; trustServerCertificate=true");
 
         }
 
@@ -22,7 +22,6 @@ namespace DataAccessLayer.Concrete
 
         public DbSet<CustomerAccountProcess> CustomerAccountProcesses { get; set; }
 
-        
 
     }
 }

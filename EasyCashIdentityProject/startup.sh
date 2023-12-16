@@ -1,1 +1,2 @@
-dotnet ef migrations add InitialCreat --project EasyCashIdentityProject/DataAccessLayer --startup-project EasyCashIdentityProject/PresentationLayer
+dotnet ef migrations add InitialCreate --project EasyCashIdentityProject/DataAccessLayer --startup-project EasyCashIdentityProject/PresentationLayer
+dotnet ef database update --project EasyCashIdentityProject/DataAccessLayer --startup-project EasyCashIdentityProject/PresentationLayer
