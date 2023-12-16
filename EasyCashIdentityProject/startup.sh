@@ -1,0 +1,1 @@
+dotnet ef migrations add InitialCreat --project EasyCashIdentityProject/DataAccessLayer --startup-project EasyCashIdentityProject/PresentationLayer
