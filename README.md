@@ -18,4 +18,7 @@ Butun tablolarda kullanilacak olan methodlarin tanimlandigi interface
 DataAccessLayer.Abstract.ICustomerAccountDal
 ise CustomerAccount'a özel methodlarin tanimlandigi interface
 
+DataAccessLayer.Repositories(SERVICE)
+Oluşturulan interface'lerin implemente edildiği class'lar
+
 Response tipleri ?
