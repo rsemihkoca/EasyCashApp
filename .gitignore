@@ -407,3 +407,9 @@ FodyWeavers.xsd
 **/obj/*
 **/bin/*
 **.env
+EasyCashIdentityProject/BusinessLayer/obj/BusinessLayer.csproj.nuget.dgspec.json
+EasyCashIdentityProject/BusinessLayer/obj/project.assets.json
+EasyCashIdentityProject/BusinessLayer/obj/project.nuget.cache
+EasyCashIdentityProject/PresentationLayer/obj/PresentationLayer.csproj.nuget.dgspec.json
+EasyCashIdentityProject/PresentationLayer/obj/project.assets.json
+EasyCashIdentityProject/PresentationLayer/obj/project.nuget.cache
