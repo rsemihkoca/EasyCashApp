@@ -30,7 +30,7 @@ namespace PresentationLayer.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Register(AppUserRegisterRequest request)
+        public async Task<IActionResult> Index(AppUserRegisterRequest request)
         {
             if (ModelState.IsValid)
             {
