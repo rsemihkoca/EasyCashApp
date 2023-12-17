@@ -11,3 +11,11 @@
 - Veri Tabanı: MSSQL
 
 ![Alt text](image.png)
+
+
+DataAccessLayer.Abstract.IGenericDal
+Butun tablolarda kullanilacak olan methodlarin tanimlandigi interface
+DataAccessLayer.Abstract.ICustomerAccountDal
+ise CustomerAccount'a özel methodlarin tanimlandigi interface
+
+Response tipleri ?
