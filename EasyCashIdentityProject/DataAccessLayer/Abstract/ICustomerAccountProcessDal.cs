@@ -6,7 +6,7 @@ using EntityLayer.Concrete;
 
 namespace DataAccessLayer.Abstract
 {
-    public interface ICustomerAccountDal : IGenericDal<CustomerAccount>
+    public interface ICustomerAccountProcessDal : IGenericDal<CustomerAccountProcess>
     {
 
     }
