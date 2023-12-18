@@ -11,7 +11,7 @@ using Microsoft.Extensions.Logging;
 
 namespace PresentationLayer.Controllers
 {
-    // [Route("[controller]")]
+    [Route("[controller]")]
     public class RegisterController : Controller
     {
         private readonly UserManager<AppUser> _userManager;

@@ -88,12 +88,11 @@ h2 {
     font-weight: 300;
     margin-bottom: 30px;
     color: #fff;
-    text-transform: uppercase;
 }
 
 input[type="text"], input[type="password"], input[type="email"]{
-	width: 84%;
-	padding: 15px 10px 15px;
+	width: 60%;
+	padding: 15px 15px 15px;
 	font-size: 14px;
 	background: transparent;
 	border: 2px solid #537b35;
@@ -119,7 +118,9 @@ input[type="password"] {
 ul.agileinfotickwthree {
 	list-style: none;
 	display: inline-block;
-	width: 100%;
+	width: 70%;
+	margin-top: 20px;
+
 	margin-bottom: 40px;
 	text-align: left;
 	padding-left: 10px;
