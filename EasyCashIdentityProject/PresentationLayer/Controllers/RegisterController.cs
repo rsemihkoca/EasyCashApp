@@ -48,7 +48,6 @@ namespace PresentationLayer.Controllers
                     City = "İstanbul",
                     District = "Kadıköy",
                     ImageUrl = "default.png",
-                    
                     ConfirmCode = code
                 };
 
@@ -64,9 +63,9 @@ namespace PresentationLayer.Controllers
                     email.From.Add(new MailboxAddress("EasyCashApp", senderEmail));
                     email.To.Add(new MailboxAddress($"{user.Name} {user.Surname}", user.Email));
 
-                    email.Subject = "EasyCashApp - Email Verification";
+                    email.Subject = "EasyCashApp";
                     email.Body = new TextPart(MimeKit.Text.TextFormat.Html) {
-                        Text = $"<h1>EasyCashApp - Email Verification</h1><br><p>Verification code: {code}</p>"
+                        Text = $"<h1>Email Verification</h1><br><p>Verification code: {code}</p>"
                     };
 
                     using (var smtp = new SmtpClient())

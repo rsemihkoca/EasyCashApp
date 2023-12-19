@@ -1,11 +1,18 @@
 using DataAccessLayer.Concrete;
 using DataAccessLayer.Repositories;
+using DotNetEnv;
+using DotNetEnv.Configuration;
 using EntityLayer.Concrete;
 using PresentationLayer.Models;
 
-var builder = WebApplication.CreateBuilder(args);
 
-DotNetEnv.Env.Load();
+// DotNetEnv.Env.TraversePath().Load();
+
+var configuration = new ConfigurationBuilder()
+    .AddDotNetEnv(".env", LoadOptions.TraversePath()) // Simply add the DotNetEnv configuration source!
+    .Build();
+
+var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
