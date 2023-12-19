@@ -1,13 +1,15 @@
 using DataAccessLayer.Concrete;
+using DataAccessLayer.Repositories;
 using EntityLayer.Concrete;
+using PresentationLayer.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<Context>();
-builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>();
-
+builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>().AddErrorDescriber<CustomIdentityValidator>();
+// builder.Services.AddScoped<ICustomerAccountDal, GenericRepository<CustomerAccount>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

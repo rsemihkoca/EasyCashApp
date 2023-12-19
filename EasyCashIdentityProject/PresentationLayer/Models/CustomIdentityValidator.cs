@@ -52,6 +52,5 @@ namespace PresentationLayer.Models
                 Description = $"Şifre en az bir alfanümerik olmayan karakter içermelidir."
             };
         }
-        
     }
 }
