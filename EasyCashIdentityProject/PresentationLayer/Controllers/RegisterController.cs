@@ -81,6 +81,8 @@ namespace PresentationLayer.Controllers
 
                     _logger.LogInformation("User created a new account with password.");
 
+                    TempData["Mail"] = request.Email;
+
                     return RedirectToAction("Index", "ConfirmMail");
                 }
 

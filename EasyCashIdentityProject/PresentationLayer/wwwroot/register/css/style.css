@@ -77,10 +77,10 @@ h1 {
 }
 
 .w3layoutscontaineragileits {
-    width: 30%;
+    width: 25%;
     margin: 0 auto;
     background: rgba(0, 0, 0, 0.5);
-    padding: 30px;
+    padding: 20px 5px 30px 5px;
 }
 
 h2 {
@@ -102,16 +102,16 @@ input[type="text"], input[type="password"], input[type="email"]{
 	font-family: 'Quicksand', sans-serif;
 }
 input[type="text"]{
-	background: url("../images/user.png") no-repeat 382px 11px;
+	background: url("../images/user.png") no-repeat 90% 50%;
 	background-size: 25px;
 }
 input[type="email"] {
-	background: url("../images/e-mail.png") no-repeat 382px 11px;
+	background: url("../images/e-mail.png") no-repeat 90% 50%;
 	background-size: 25px;
 }
 
 input[type="password"] {
-	background: url("../images/password.png") no-repeat 382px 11px;
+	background: url("../images/password.png") no-repeat 90% 50%;
 	background-size: 25px;
 }
 
