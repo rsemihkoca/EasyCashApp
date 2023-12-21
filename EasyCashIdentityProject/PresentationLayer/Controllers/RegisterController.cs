@@ -14,17 +14,17 @@ public class RegisterController : Controller
     public RegisterController(UserManager<AppUser> userManager, ILogger<RegisterController> logger)
     {
             _userManage
-  
+     
      userManage
     r;
             _logge
-  
+     
      logge
     r;
         }
 
     [HttpGet]
-    public IActionResult Index()
+    public IActionResult In8dex()
     {
             retur
      Vie
@@ -37,7 +37,7 @@ public class RegisterController : Controller
     public async Task<IActionResult> Index(AppUserRegisterRequest request)
     {
             i
-  
+     
     (ModelStat
     e
     .IsVali
@@ -45,7 +45,7 @@ public class RegisterController : Controller
             {
                 Rando
      rando
-  
+     
      ne
      Rando
     m
@@ -53,7 +53,7 @@ public class RegisterController : Controller
     );
                 Strin
      cod
-  
+     
      rando
     m
     .Nex
@@ -69,53 +69,54 @@ public class RegisterController : Controller
     );
                 AppUse
      use
-  
+     
      ne
      AppUser
                 {
                     UserNam
-  
+     
      reques
     t
     .Usernam
     e,
                     Emai
-  
+     
      reques
     t
     .Emai
     l,
                     Nam
-  
+     
      reques
     t
     .Nam
     e,
                     Surnam
-  
+     
      reques
     t
     .Surnam
     e,
                     Cit
-  
+     
      "İstanbul
     ",
                     Distric
-  
+     
      "Kadıköy
     ",
                     ImageUr
-  
+     
      "default.png
     ",
                     ConfirmCod
-  
+     
      code
                 
-    }; va
+    }
+     va
      resul
-  
+     
      awai
      _userManage
     r
@@ -127,16 +128,18 @@ public class RegisterController : Controller
     t
     .Passwor
     d
-    ); i
-  
+    )
+     i
+     
     (resul
     t
     .Succeede
     d)
-                { strin
+                
+     strin
     g
      senderEmai
-  
+     
      Environmen
     t
     .GetEnvironmentVariabl
@@ -147,7 +150,7 @@ public class RegisterController : Controller
                     strin
     g
      senderPasswor
-  
+     
      Environmen
     t
     .GetEnvironmentVariabl
@@ -157,12 +160,13 @@ public class RegisterController : Controller
     );
                     va
      emai
-  
+     
      ne
      MimeMessag
     e
     (
-    ); emai
+    )
+     emai
     l
     .Fro
     m
@@ -201,16 +205,17 @@ public class RegisterController : Controller
     .Emai
     l
     )
-    ); emai
+    )
+     emai
     l
     .Subjec
-  
+     
      "EasyCashApp
     ";
                     emai
     l
     .Bod
-  
+     
      ne
      TextPar
     t
@@ -224,16 +229,17 @@ public class RegisterController : Controller
     l
      {
                         Tex
-  
+     
      $"<h1>Email Verification</h1><br><p>Verification code: 
     {cod
     e}</p>"
                     
-    }; usin
-  
+    }
+     usin
+     
     (va
      smt
-  
+     
      ne
      SmtpClien
     t
@@ -250,7 +256,8 @@ public class RegisterController : Controller
     7
      fals
     e
-    ); smt
+    )
+     smt
     p
     .Authenticat
     e
@@ -258,7 +265,8 @@ public class RegisterController : Controller
     l
      senderPasswor
     d
-    ); smt
+    )
+     smt
     p
     .Sen
     d
@@ -272,21 +280,24 @@ public class RegisterController : Controller
     (tru
     e
     );
-                    } _logge
+                    
+     _logge
     r
     .LogInformatio
     n
     ("User created a new account with password.
     "
-    ); TempDat
+    )
+     TempDat
     a
     ["Mail
     "
-  
+     
      reques
     t
     .Emai
-    l; retur
+    l
+     retur
      RedirectToActio
     n
     ("Index
@@ -294,8 +305,9 @@ public class RegisterController : Controller
      "ConfirmMail
     "
     );
-                } foreac
-  
+                
+     foreac
+     
     (IdentityErro
      erro
      i
@@ -316,7 +328,8 @@ public class RegisterController : Controller
     n
     );
                 }
-            } retur
+            
+     retur
      Vie
     w
     (

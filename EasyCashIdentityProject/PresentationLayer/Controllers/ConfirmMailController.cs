@@ -1,4 +1,7 @@
+using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using PresentationLayer.Models;
 
 namespace PresentationLayer.Controllers;
 
