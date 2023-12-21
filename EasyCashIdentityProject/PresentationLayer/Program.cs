@@ -1,10 +1,8 @@
 using DataAccessLayer.Concrete;
-using DataAccessLayer.Repositories;
 using DotNetEnv;
 using DotNetEnv.Configuration;
 using EntityLayer.Concrete;
 using PresentationLayer.Models;
-
 
 // DotNetEnv.Env.TraversePath().Load();
 

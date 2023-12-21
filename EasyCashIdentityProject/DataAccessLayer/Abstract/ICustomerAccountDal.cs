@@ -1,13 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using EntityLayer.Concrete;
+namespace DataAccessLayer.Abstract;
 
-namespace DataAccessLayer.Abstract
+public interface ICustomerAccountDal : IGenericDal<CustomerAccount>
 {
-    public interface ICustomerAccountDal : IGenericDal<CustomerAccount>
-    {
-        
-    }
 }
