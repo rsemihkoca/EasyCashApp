@@ -1,35 +1,37 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace PresentationLayer.Controllers
+namespace PresentationLayer.Controllers;
+
+[Route("[controller]")]
+public class ConfirmMailController : Controller
 {
-    [Route("[controller]")]
-    public class ConfirmMailController : Controller
+    private readonly UserManager<AppUser> _userManager;
+
+    public ConfirmMailController(UserManager<AppUser> userManager)
     {
-        private readonly ILogger<ConfirmMailController> _logger;
+        _userManager = userManager;
+    }
 
-        public ConfirmMailController(ILogger<ConfirmMailController> logger)
+    [HttpGet]
+    public IActionResult Index()
+    {
+        var value = TempData["Mail"];
+        ViewBag.v = value;
+        //  confirmMailViewModel.Mail = value.ToString();
+        return View();
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Index(ConfirmMailViewModel confirmMailViewModel)
+    {
+        var user = await _userManager.FindByEmailAsync(confirmMailViewModel.Mail);
+        if (user.ConfirmCode == confirmMailViewModel.ConfirmCode)
         {
-            _logger = logger;
+            user.EmailConfirmed = true;
+            await _userManager.UpdateAsync(user);
+            return RedirectToAction("Index", "Login");
         }
 
-        [HttpGet]
-        public IActionResult Index()
-        {
-            var value = TempData["Mail"];
-            return View(value);
-        }
-
-        [HttpPost]
-        public IActionResult Index(string code)
-        {
-            if (code == "123456")
-            {
-                return RedirectToAction("Index", "Login");
-            }
-            else
-            {
-                return View();
-            }
-        }
+        return View();
     }
 }

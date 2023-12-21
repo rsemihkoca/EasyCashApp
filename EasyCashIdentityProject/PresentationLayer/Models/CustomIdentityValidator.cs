@@ -1,56 +1,51 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 
-namespace PresentationLayer.Models
+namespace PresentationLayer.Models;
+
+public class CustomIdentityValidator : IdentityErrorDescriber
 {
-    public class CustomIdentityValidator : IdentityErrorDescriber
+    public override IdentityError PasswordTooShort(int length)
     {
-        public override IdentityError PasswordTooShort(int length)
+        return new IdentityError
         {
-            return new IdentityError()
-            {
-                Code = nameof(PasswordTooShort),
-                Description = $"Şifre en az {length} karakter olmalıdır."
-            };
-        }
+            Code = nameof(PasswordTooShort),
+            Description = $"Şifre en az {length} karakter olmalıdır."
+        };
+    }
 
-        public override IdentityError PasswordRequiresUpper()
+    public override IdentityError PasswordRequiresUpper()
+    {
+        return new IdentityError
         {
-            return new IdentityError()
-            {
-                Code = nameof(PasswordRequiresUpper),
-                Description = $"Şifre en az bir büyük harf içermelidir."
-            };
-        }
+            Code = nameof(PasswordRequiresUpper),
+            Description = "Şifre en az bir büyük harf içermelidir."
+        };
+    }
 
-        public override IdentityError PasswordRequiresLower()
+    public override IdentityError PasswordRequiresLower()
+    {
+        return new IdentityError
         {
-            return new IdentityError()
-            {
-                Code = nameof(PasswordRequiresLower),
-                Description = $"Şifre en az bir küçük harf içermelidir."
-            };
-        }
+            Code = nameof(PasswordRequiresLower),
+            Description = "Şifre en az bir küçük harf içermelidir."
+        };
+    }
 
-        public override IdentityError PasswordRequiresDigit()
+    public override IdentityError PasswordRequiresDigit()
+    {
+        return new IdentityError
         {
-            return new IdentityError()
-            {
-                Code = nameof(PasswordRequiresDigit),
-                Description = $"Şifre en az bir rakam içermelidir."
-            };
-        }
+            Code = nameof(PasswordRequiresDigit),
+            Description = "Şifre en az bir rakam içermelidir."
+        };
+    }
 
-        public override IdentityError PasswordRequiresNonAlphanumeric()
+    public override IdentityError PasswordRequiresNonAlphanumeric()
+    {
+        return new IdentityError
         {
-            return new IdentityError()
-            {
-                Code = nameof(PasswordRequiresNonAlphanumeric),
-                Description = $"Şifre en az bir alfanümerik olmayan karakter içermelidir."
-            };
-        }
+            Code = nameof(PasswordRequiresNonAlphanumeric),
+            Description = "Şifre en az bir alfanümerik olmayan karakter içermelidir."
+        };
     }
 }

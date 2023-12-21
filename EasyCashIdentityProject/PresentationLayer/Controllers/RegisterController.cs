@@ -1,98 +1,325 @@
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 using DtoLayer.Dtos.AppUserDtos;
 using EntityLayer.Concrete;
-using MailKit.Net.Smtp;
-using MailKit;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using MimeKit;
 
-namespace PresentationLayer.Controllers
+namespace PresentationLayer.Controllers;
+
+[Route("[controller]")]
+public class RegisterController : Controller
 {
-    [Route("[controller]")]
-    public class RegisterController : Controller
+    private readonly ILogger<RegisterController> _logger;
+    private readonly UserManager<AppUser> _userManager;
+
+    public RegisterController(UserManager<AppUser> userManager, ILogger<RegisterController> logger)
     {
-        private readonly UserManager<AppUser> _userManager;
-        private readonly ILogger<RegisterController> _logger;
-
-        public RegisterController(UserManager<AppUser> userManager, ILogger<RegisterController> logger)
-        {
-            _userManager = userManager;
-            _logger = logger;
+            _userManage
+  
+     userManage
+    r;
+            _logge
+  
+     logge
+    r;
         }
 
-        [HttpGet]
-        public IActionResult Index()
-        {
-            return View();
+    [HttpGet]
+    public IActionResult Index()
+    {
+            retur
+     Vie
+    w
+    (
+    );
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Index(AppUserRegisterRequest request)
-        {
-            if (ModelState.IsValid)
+    [HttpPost]
+    public async Task<IActionResult> Index(AppUserRegisterRequest request)
+    {
+            i
+  
+    (ModelStat
+    e
+    .IsVali
+    d)
             {
-                Random random = new Random();
-                String code = random.Next(100000, 999999).ToString();
-                AppUser user = new AppUser
+                Rando
+     rando
+  
+     ne
+     Rando
+    m
+    (
+    );
+                Strin
+     cod
+  
+     rando
+    m
+    .Nex
+    t
+    (10000
+    0
+     99999
+    9
+    )
+    .ToStrin
+    g
+    (
+    );
+                AppUse
+     use
+  
+     ne
+     AppUser
                 {
-                    UserName = request.Username,
-                    Email = request.Email,
-                    Name = request.Name,
-                    Surname = request.Surname,
-                    City = "İstanbul",
-                    District = "Kadıköy",
-                    ImageUrl = "default.png",
-                    ConfirmCode = code
-                };
-
-                var result = await _userManager.CreateAsync(user, request.Password);
-
-                if (result.Succeeded)
-                {
-
-                    string? senderEmail = Environment.GetEnvironmentVariable("EMAIL_ADDRESS");
-                    string? senderPassword = Environment.GetEnvironmentVariable("EMAIL_PASSWORD");
-                    var email = new MimeMessage();
-
-                    email.From.Add(new MailboxAddress("EasyCashApp", senderEmail));
-                    email.To.Add(new MailboxAddress($"{user.Name} {user.Surname}", user.Email));
-
-                    email.Subject = "EasyCashApp";
-                    email.Body = new TextPart(MimeKit.Text.TextFormat.Html) {
-                        Text = $"<h1>Email Verification</h1><br><p>Verification code: {code}</p>"
-                    };
-
-                    using (var smtp = new SmtpClient())
+                    UserNam
+  
+     reques
+    t
+    .Usernam
+    e,
+                    Emai
+  
+     reques
+    t
+    .Emai
+    l,
+                    Nam
+  
+     reques
+    t
+    .Nam
+    e,
+                    Surnam
+  
+     reques
+    t
+    .Surnam
+    e,
+                    Cit
+  
+     "İstanbul
+    ",
+                    Distric
+  
+     "Kadıköy
+    ",
+                    ImageUr
+  
+     "default.png
+    ",
+                    ConfirmCod
+  
+     code
+                
+    }; va
+     resul
+  
+     awai
+     _userManage
+    r
+    .CreateAsyn
+    c
+    (use
+    r
+     reques
+    t
+    .Passwor
+    d
+    ); i
+  
+    (resul
+    t
+    .Succeede
+    d)
+                { strin
+    g
+     senderEmai
+  
+     Environmen
+    t
+    .GetEnvironmentVariabl
+    e
+    ("EMAIL_ADDRESS
+    "
+    );
+                    strin
+    g
+     senderPasswor
+  
+     Environmen
+    t
+    .GetEnvironmentVariabl
+    e
+    ("EMAIL_PASSWORD
+    "
+    );
+                    va
+     emai
+  
+     ne
+     MimeMessag
+    e
+    (
+    ); emai
+    l
+    .Fro
+    m
+    .Ad
+    d
+    (ne
+     MailboxAddres
+    s
+    ("EasyCashApp
+    "
+     senderEmai
+    l
+    )
+    );
+                    emai
+    l
+    .T
+    o
+    .Ad
+    d
+    (ne
+     MailboxAddres
+    s
+    ($"
+    {use
+    r
+    .Nam
+    e} 
+    {use
+    r
+    .Surnam
+    e}
+    "
+     use
+    r
+    .Emai
+    l
+    )
+    ); emai
+    l
+    .Subjec
+  
+     "EasyCashApp
+    ";
+                    emai
+    l
+    .Bod
+  
+     ne
+     TextPar
+    t
+    (MimeKi
+    t
+    .Tex
+    t
+    .TextForma
+    t
+    .Htm
+    l
+     {
+                        Tex
+  
+     $"<h1>Email Verification</h1><br><p>Verification code: 
+    {cod
+    e}</p>"
+                    
+    }; usin
+  
+    (va
+     smt
+  
+     ne
+     SmtpClien
+    t
+    (
+    ))
                     {
-                        smtp.Connect("smtp.gmail.com", 587, false);
-
-                        smtp.Authenticate(senderEmail, senderPassword);
-
-                        smtp.Send(email);
-                        smtp.Disconnect(true);
-                    }
-
-
-                    _logger.LogInformation("User created a new account with password.");
-
-                    TempData["Mail"] = request.Email;
-
-                    return RedirectToAction("Index", "ConfirmMail");
-                }
-
-                foreach (IdentityError error in result.Errors)
+                        smt
+    p
+    .Connec
+    t
+    ("smtp.gmail.com
+    "
+     58
+    7
+     fals
+    e
+    ); smt
+    p
+    .Authenticat
+    e
+    (senderEmai
+    l
+     senderPasswor
+    d
+    ); smt
+    p
+    .Sen
+    d
+    (emai
+    l
+    );
+                        smt
+    p
+    .Disconnec
+    t
+    (tru
+    e
+    );
+                    } _logge
+    r
+    .LogInformatio
+    n
+    ("User created a new account with password.
+    "
+    ); TempDat
+    a
+    ["Mail
+    "
+  
+     reques
+    t
+    .Emai
+    l; retur
+     RedirectToActio
+    n
+    ("Index
+    "
+     "ConfirmMail
+    "
+    );
+                } foreac
+  
+    (IdentityErro
+     erro
+     i
+     resul
+    t
+    .Error
+    s)
                 {
-                    ModelState.AddModelError("", error.Description);
+                    ModelStat
+    e
+    .AddModelErro
+    r
+    ("
+    "
+     erro
+    r
+    .Descriptio
+    n
+    );
                 }
-            }
-
-            return View();
+            } retur
+     Vie
+    w
+    (
+    );
         }
-    }
 }
