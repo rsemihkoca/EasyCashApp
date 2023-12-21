@@ -6,15 +6,17 @@ using PresentationLayer.Models;
 namespace PresentationLayer.Controllers;
 
 [Route("[controller]")]
-public class ConfirmMailController : Controller
+public class ConfirmMailController: Controller
 {
-    private readonly UserManager<AppUser> _userManager;
 
+    private readonly UserManager<AppUser> _userManager;
+    
     public ConfirmMailController(UserManager<AppUser> userManager)
     {
         _userManager = userManager;
     }
-
+    
+    
     [HttpGet]
     public IActionResult Index()
     {
@@ -25,14 +27,14 @@ public class ConfirmMailController : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult> Index(ConfirmMailViewModel confirmMailViewModel)
+    public async Task<IActionResult> Index(ConfirmMailViewModel request)
     {
-        var user = await _userManager.FindByEmailAsync(confirmMailViewModel.Mail);
-        if (user.ConfirmCode == confirmMailViewModel.ConfirmCode)
+        var user = await _userManager.FindByEmailAsync(request.Mail);
+        if (user.ConfirmCode == request.ConfirmCode)
         {
             user.EmailConfirmed = true;
             await _userManager.UpdateAsync(user);
-            return RedirectToAction("Index", "Login");
+            return RedirectToAction("Index", "Profile");
         }
 
         return View();

@@ -4,10 +4,8 @@ using DotNetEnv.Configuration;
 using EntityLayer.Concrete;
 using PresentationLayer.Models;
 
-// DotNetEnv.Env.TraversePath().Load();
-
 var configuration = new ConfigurationBuilder()
-    .AddDotNetEnv(".env", LoadOptions.TraversePath()) // Simply add the DotNetEnv configuration source!
+    .AddDotNetEnv("../.env", LoadOptions.TraversePath()) // Simply add the DotNetEnv configuration source!
     .Build();
 
 var builder = WebApplication.CreateBuilder(args);
