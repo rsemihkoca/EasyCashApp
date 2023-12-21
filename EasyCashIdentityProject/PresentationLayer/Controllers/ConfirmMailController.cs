@@ -1,10 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 
 namespace PresentationLayer.Controllers
 {
@@ -22,7 +16,7 @@ namespace PresentationLayer.Controllers
         public IActionResult Index()
         {
             var value = TempData["Mail"];
-            return View();
+            return View(value);
         }
 
         [HttpPost]
