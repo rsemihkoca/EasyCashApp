@@ -22,3 +22,7 @@ DataAccessLayer.Repositories(SERVICE)
 Oluşturulan interface'lerin implemente edildiği class'lar
 
 Response tipleri ?
+
+TODO
+
+Register/Logine google facebook apple ile otomatik giriş
