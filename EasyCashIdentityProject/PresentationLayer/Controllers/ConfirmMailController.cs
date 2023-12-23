@@ -34,7 +34,7 @@ public class ConfirmMailController: Controller
         {
             user.EmailConfirmed = true;
             await _userManager.UpdateAsync(user);
-            return RedirectToAction("Index", "Profile");
+            return RedirectToAction("Index", "Login");
         }
 
         return View();
