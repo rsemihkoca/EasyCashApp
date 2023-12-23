@@ -186,29 +186,6 @@ input[type="submit"]:hover {
     color: #537b35;
 }
 
-.aitssendbuttonw3ls p {
-    text-align: center;
-    margin-top: 40px;
-    text-transform: capitalize;
-    letter-spacing: 1px;
-}
-
-.aitssendbuttonw3ls p a {
-    color: #fff;
-    font-weight: 600;
-    padding: 8px 20px;
-    border: 1px solid #fff;
-}
-
-.aitssendbuttonw3ls p a span {
-	font-size: 18px;
-}
-
-.aitssendbuttonw3ls p a:hover {
-	color: #537b35;
-    border: 1px solid #537b35;
-}
-
 ::-webkit-input-placeholder {
 	color: #FFF;
 }
@@ -374,9 +351,6 @@ input[type="checkbox"] {
 	h2 {
 		font-size: 35px;
 	}
-	.aitssendbuttonw3ls p {
-		font-size: 14px;
-	}
 }
 
 @media screen and (max-width: 667px) {
@@ -463,15 +437,11 @@ input[type="checkbox"] {
 	.w3layoutscontaineragileits {
 		width: 70%;
 	}
-	.aitssendbuttonw3ls {
-		text-align: center;
-	}
+
 	ul.agileinfotickwthree {
 		padding-left: 0;
 	}
-	.aitssendbuttonw3ls p {
-		float: left;
-	}
+
 	.w3layoutscontaineragileits input[type="text"],.w3layoutscontaineragileits input[type="password"],.w3layoutscontaineragileits input[type="email"] {
 		width: 94%;
 		padding: 13px 8px 13px;
@@ -515,14 +485,6 @@ input[type="checkbox"] {
 		background: url(../images/password.png) no-repeat 255px 11px;
 		background-size: 23px;
 	}
-	.aitssendbuttonw3ls p {
-		font-size: 13px;
-	}
-	.aitssendbuttonw3ls p a {
-		font-weight: 500;
-		padding: 6px 5px;
-	}
-	
 	.w3footeragile p {
 		letter-spacing: 0px;
 	}
@@ -611,16 +573,6 @@ input[type="checkbox"] {
 	}
 	ul.agileinfotickwthree {
 		margin-bottom: 15px;
-	}
-	.aitssendbuttonw3ls p {
-		float: none;
-		text-align: center;
-		font-size: 14px;
-		margin-top: 20px;
-	}
-	.aitssendbuttonw3ls p a,.aitssendbuttonw3ls p a:hover {
-		margin-left: 13px;
-		border: none;
 	}
 	input[type="text"] {
 		background: url(../images/user.png) no-repeat 229px 11px;
