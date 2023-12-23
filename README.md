@@ -26,3 +26,4 @@ Response tipleri ?
 TODO
 
 Register/Logine google facebook apple ile otomatik giriş
+Maildeki linke tıklayarak aktivasyon
