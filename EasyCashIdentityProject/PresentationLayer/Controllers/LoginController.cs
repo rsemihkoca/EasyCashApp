@@ -25,14 +25,20 @@ public class LoginController : Controller
     [HttpPost]
     public async Task<IActionResult> Index(LoginViewModel request)
     {
-        var result = await _signInManager.PasswordSignInAsync(request.Username, request.Password, false, true);
+        var result =
+            await _signInManager.PasswordSignInAsync(request.Username, request.Password, request.RememberMe, true);
         if (result.Succeeded)
         {
             var user = await _userManager.FindByNameAsync(request.Username);
-            if (user.EmailConfirmed) return RedirectToAction("Index", "Profile");
-
-            TempData["Mail"] = user.Email;
-            return RedirectToAction("Index", "ConfirmMail");
+            if (user.EmailConfirmed)
+            {
+                return RedirectToAction("Index", "Profile");
+            }
+            else
+            {
+                TempData["Mail"] = user.Email;
+                return RedirectToAction("Index", "ConfirmMail");
+            }
         }
 
         return View();
