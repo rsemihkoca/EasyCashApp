@@ -6,6 +6,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="DotNetEnv" Version="2.5.0" />
+<!--    <PackageReference Include="JetBrains.Annotations" Version="2023.3.0" />-->
     <PackageReference Include="MailKit" Version="4.3.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.0" />
@@ -20,7 +21,12 @@
     <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj" />
     <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <_ContentIncludedByDefault Remove="Views\Register\Index.cshtml" />
-  </ItemGroup>
+<!--  <ItemGroup>-->
+<!--    <_ContentIncludedByDefault Remove="Views\Register\Index.cshtml" />-->
+<!--    <_ContentIncludedByDefault Remove="Views\Shared\Components\SidebarPartial\Default.cshtml" />-->
+<!--    <_ContentIncludedByDefault Remove="Views\Accounts\Index.cshtml" />-->
+<!--  </ItemGroup>-->
+<!--  <ItemGroup>-->
+<!--    <UpToDateCheckInput Remove="Views\Shared\Components\SidebarPartial\Default.cshtml" />-->
+<!--  </ItemGroup>-->
 </Project>
