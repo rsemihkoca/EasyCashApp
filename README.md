@@ -27,3 +27,8 @@ TODO
 
 Register/Logine google facebook apple ile otomatik giriş
 Maildeki linke tıklayarak aktivasyon
+
+
+PresentationLayer.AssemblyInfo
+[assembly: AspMvcPartialViewLocationFormat(@"\ViewsShared\Components\{1}\{0}.cshtml")]
+[assembly: AspMvcViewLocationFormat(@"\Views\{1}\{0}.cshtml")]
