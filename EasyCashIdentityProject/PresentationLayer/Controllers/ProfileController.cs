@@ -5,7 +5,7 @@ namespace PresentationLayer.Controllers
     public class ProfileController : Controller
     {
         // GET: ProfileController
-        public ActionResult Index()
+        public IActionResult Index()
         {
             return View();
         }
